@@ -28,6 +28,11 @@
 
     svg {
       height: $icon-height;
+
+      polygon,
+      path {
+        transition: all 0.3s;
+      }
     }
   }
 
@@ -41,6 +46,7 @@
   opacity: 0.6;
 }
 
+.__ethpay_button:active,
 .__ethpay_button.black {
   color: white !important;
   background: black;
@@ -51,10 +57,7 @@
   }
 
   svg {
-    polygon {
-      fill: white !important;
-    }
-
+    polygon,
     path {
       fill: white !important;
     }
