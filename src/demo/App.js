@@ -1,11 +1,12 @@
 import React from 'react';
-import Example from '../lib';
+import Example, { PayButton } from '../lib';
 import { SecondExample } from '../lib';
 
 const App = () => (
   <div>
     <Example />
     <SecondExample />
+    <PayButton />
   </div>
 );
 
