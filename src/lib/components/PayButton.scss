@@ -16,6 +16,8 @@
   .caption {
     font-weight: 600;
     font-size: 15px;
+    display: inline-block;
+    margin-right: 2px;
   }
 
   $icon-height: 20px;
@@ -50,6 +52,10 @@
 
   svg {
     polygon {
+      fill: white !important;
+    }
+
+    path {
       fill: white !important;
     }
   }

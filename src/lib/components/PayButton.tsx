@@ -3,7 +3,7 @@ import './PayButton.scss';
 import Icons from './Icons';
 
 interface Props {
-    currency?: 'btc' | 'eth' | 'bsv' | 'bch' | 'usdc' | 'dai' | 'usdt' | 'tusd';
+    currency?: 'btc' | 'eth' | 'bsv' | 'bch' | 'usdc' | 'dai' | 'usdt' | 'tusd' | 'husd' | 'pax' | 'busd' | 'gusd' | 'usdk' | 'usdx' | 'sai';
     caption?: string;
     htmlTitle?: string;
     mode?: 'black' | 'light';
@@ -15,10 +15,10 @@ const PayButton = (props: Props) => {
     const title = props.htmlTitle ?? `${props.caption ?? ''} ${props.currency?.toUpperCase() ?? 'ETH'} Pay`;
 
     return (
-        <button className={`__ethpay_button ${props.mode ?? ''}`} style={{ borderColor: currency.color, ...props.cssStyle }} title={title}>
+        <button className={`__ethpay_button ${props.mode ?? ''}`} style={{ borderColor: currency.color, ...props.cssStyle, color: currency.color }} title={title}>
             {props.caption ? <span className='caption'>{props.caption}</span> : undefined}
             <div className='icon'><currency.svg /></div>
-            <span style={{ color: currency.color }}>Pay</span>
+            <span>Pay</span>
         </button>
     );
 }
