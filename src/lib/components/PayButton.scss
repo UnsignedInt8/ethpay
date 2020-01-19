@@ -23,12 +23,15 @@
   $icon-height: 20px;
   .icon {
     height: $icon-height;
+    width: $icon-height;
     display: inline-block;
     margin: 0 2px;
 
     svg {
       height: $icon-height;
 
+      .__ethpay_symbol,
+      circle,
       polygon,
       path {
         transition: all 0.3s;
@@ -57,9 +60,14 @@
   }
 
   svg {
+    circle,
     polygon,
     path {
       fill: white !important;
+    }
+
+    .__ethpay_symbol {
+      fill: black !important;
     }
   }
 }
