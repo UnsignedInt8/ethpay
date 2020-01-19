@@ -1,11 +1,11 @@
 .__ethpay_button {
-  height: 35.65px;
+  height: 36px;
   min-width: 108px;
   border: 1px solid black;
+  border-radius: 5px;
   padding: 0 24px;
   background: none;
   cursor: pointer;
-  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,13 +16,17 @@
   .caption {
     font-weight: 600;
     font-size: 15px;
-    text-transform: capitalize;
   }
 
+  $icon-height: 20px;
   .icon {
-    height: 20px;
+    height: $icon-height;
     display: inline-block;
     margin: 0 2px;
+
+    svg {
+      height: $icon-height;
+    }
   }
 
   span {
@@ -33,4 +37,20 @@
 
 .__ethpay_button:hover {
   opacity: 0.6;
+}
+
+.__ethpay_button.black {
+  color: white !important;
+  background: black;
+  border-color: black !important;
+
+  span {
+    color: white !important;
+  }
+
+  svg {
+    polygon {
+      fill: white !important;
+    }
+  }
 }
