@@ -3,10 +3,11 @@ import Example, { PayButton } from '../lib';
 import { SecondExample } from '../lib';
 
 const App = () => (
-  <div>
+  <div className='app'>
     <Example />
     <SecondExample />
     <PayButton />
+    <PayButton caption='Buy with' />
   </div>
 );
 
