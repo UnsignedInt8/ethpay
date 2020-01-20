@@ -19,8 +19,6 @@ interface Props {
 
 const erc20Tokens = ['usdc', 'dai', 'usdt', 'tusd', 'husd', 'pax', 'busd', 'gusd', 'usdk', 'usdx', 'sai'];
 const eth = ['eth'].concat(erc20Tokens);
-const nonSupportedCoins = ['btc', 'bsv', 'bch', 'eos', 'tron', 'zec', 'xmr', 'ltc'];
-
 
 const Contracts = {
     'usdc': { addr: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', decimals: 6 },
@@ -66,7 +64,7 @@ async function send(params: { to?: string, value?: number | string, data?: strin
 }
 
 function jumpToPay(params: { to?: string, value?: number | string, currency: string }) {
-
+    window.open('', '_blank');
 }
 
 const PayButton = (props: Props) => {
@@ -83,7 +81,7 @@ const PayButton = (props: Props) => {
             {props.caption ? <span className='caption'>{props.caption}</span> : undefined}
             {props.showValue && props.value ? <span className='value'>{props.value}</span> : undefined}
             <div className='icon'><currency.svg /></div>
-            <span>Pay</span> {/* {!props.value || props.hideValue || !props.caption ?  : undefined} */}
+            <span>Pay</span>
         </button>
     );
 }
