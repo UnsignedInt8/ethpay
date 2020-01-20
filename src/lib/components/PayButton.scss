@@ -16,7 +16,11 @@
   .caption {
     font-weight: 600;
     font-size: 15px;
-    display: inline-block;
+    margin-right: 4px;
+  }
+
+  .value {
+    font-size: 16px;
     margin-right: 2px;
   }
 
@@ -25,7 +29,7 @@
     height: $icon-height;
     width: $icon-height;
     display: inline-block;
-    margin: 0 2px;
+    margin: 0 3px;
 
     svg {
       height: $icon-height;
@@ -40,6 +44,7 @@
   }
 
   span {
+    display: inline-block;
     font-weight: 600;
     font-size: 18px;
   }

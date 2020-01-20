@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "ethers": "^4.0.43",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
