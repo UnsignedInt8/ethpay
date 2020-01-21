@@ -6,6 +6,7 @@ import * as ethers from 'ethers';
 import './PayButton.scss';
 
 interface Props {
+    className?: string;
     currency: 'btc' | 'eth' | 'bsv' | 'bch' | 'usdc' | 'dai' | 'usdt' | 'tusd' | 'husd' | 'pax' | 'busd' | 'gusd' | 'usdk' | 'usdx' | 'sai' | 'eos' | 'tron' | 'zec' | 'xmr' | 'ltc';
     caption?: string;
     title?: string;
@@ -72,7 +73,7 @@ const PayButton = (props: Props) => {
     const title = props.title ?? `${props.caption ?? ''} ${props.currency?.toUpperCase() ?? 'ETH'} Pay`;
 
     return (
-        <button className={`__ethpay_button ${props.mode ?? ''}`}
+        <button className={`${props.className ?? ''} __ethpay_button ${props.mode ?? ''}`}
             style={{ borderColor: currency.color, ...props.style, color: currency.color }}
             title={title}
             onClick={_ => eth.includes(props.currency) ?
