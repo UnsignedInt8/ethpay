@@ -1,7 +1,12 @@
 import React from 'react';
 import PayButton from '../lib';
+import * as ethers from 'ethers';
 
+// console.log(new ethers.utils.BigNumber('1.5'))
+console.log(ethers.utils.parseUnits(`${1.00001 ?? 0}`, 6).toString())
 const App = () => (
+
+
   <div className='app'>
     <PayButton to='0xb20287507e81c67ed9ce672df35655776fede3bb' currency='eth' value='0.1' />
     <PayButton to='0xb20287507e81c67ed9ce672df35655776fede3bb' value={0.2} caption='Buy with' currency='eth' />

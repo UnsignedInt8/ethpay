@@ -59,7 +59,7 @@ async function send(params: { to?: string, value?: number | string, data?: strin
             from,
             gas: '0x186A0',
             value: '0x00',
-            data: Payment.buildErc20Transfer(params.to, new ethers.utils.BigNumber(10).pow(contract.decimals).mul(params.value ?? 0).toHexString()),
+            data: Payment.buildErc20Transfer(params.to, ethers.utils.parseUnits(`${params.value ?? 0}`, contract.decimals).toHexString()),
         });
     }
 }
@@ -69,7 +69,7 @@ function jumpToPay(params: { to?: string, value?: number | string, currency: str
 }
 
 const PayButton = (props: Props) => {
-    const currency = Icons[props.currency] as { color: string; img: any, svg: () => JSX.Element } ?? Icons['eth'];
+    const currency = Icons[props.currency] as { color: string; img: any, svg: () => JSX.Element } || Icons['eth'];
     const title = props.title ?? `${props.caption ?? ''} ${props.currency?.toUpperCase() ?? 'ETH'} Pay`;
 
     return (
