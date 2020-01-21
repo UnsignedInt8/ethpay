@@ -27,26 +27,26 @@ declare module "ethpay" {
 
     export default PayButton;
 
-    export interface Icons {
-        eth: Icon,
-        dai: Icon,
-        usdt: Icon,
-        usdc: Icon,
-        tusd: Icon,
-        husd: Icon,
-        pax: Icon,
-        usdk: Icon,
-        busd: Icon,
-        gusd: Icon,
-        usdx: Icon,
-        sai: Icon,
-        btc: Icon,
-        bch: Icon,
-        bsv: Icon,
-        eos: Icon,
-        tron: Icon,
-        zec: Icon,
-        xmr: Icon,
+    export class Icons {
+        eth: Icon;
+        dai: Icon;
+        usdt: Icon;
+        usdc: Icon;
+        tusd: Icon;
+        husd: Icon;
+        pax: Icon;
+        usdk: Icon;
+        busd: Icon;
+        gusd: Icon;
+        usdx: Icon;
+        sai: Icon;
+        btc: Icon;
+        bch: Icon;
+        bsv: Icon;
+        eos: Icon;
+        tron: Icon;
+        zec: Icon;
+        xmr: Icon;
         ltc: Icon
     }
 }
