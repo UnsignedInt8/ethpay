@@ -69,7 +69,7 @@ function jumpToPay(params: { to?: string, value?: number | string, currency: str
 }
 
 const PayButton = (props: Props) => {
-    const currency = Icons[props.currency ?? 'eth'] as { color: string; img: any, svg: () => JSX.Element };
+    const currency = Icons[props.currency] as { color: string; img: any, svg: () => JSX.Element } ?? Icons['eth'];
     const title = props.title ?? `${props.caption ?? ''} ${props.currency?.toUpperCase() ?? 'ETH'} Pay`;
 
     return (
