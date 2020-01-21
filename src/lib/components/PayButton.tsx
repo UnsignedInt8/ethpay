@@ -59,7 +59,7 @@ async function send(params: { to?: string, value?: number | string, data?: strin
             from,
             gas: '0x186A0',
             value: '0x00',
-            data: Payment.buildErc20Transfer(params.to, new ethers.utils.BigNumber(params.value ?? 0).mul(new ethers.utils.BigNumber(10).pow(contract.decimals)).toHexString()),
+            data: Payment.buildErc20Transfer(params.to, new ethers.utils.BigNumber(10).pow(contract.decimals).mul(params.value ?? 0).toHexString()),
         });
     }
 }

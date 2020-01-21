@@ -28,25 +28,25 @@ declare module "ethpay" {
     export default PayButton;
 
     export class Icons {
-        eth: Icon;
-        dai: Icon;
-        usdt: Icon;
-        usdc: Icon;
-        tusd: Icon;
-        husd: Icon;
-        pax: Icon;
-        usdk: Icon;
-        busd: Icon;
-        gusd: Icon;
-        usdx: Icon;
-        sai: Icon;
-        btc: Icon;
-        bch: Icon;
-        bsv: Icon;
-        eos: Icon;
-        tron: Icon;
-        zec: Icon;
-        xmr: Icon;
-        ltc: Icon
+        static readonly eth: Icon;
+        static readonly dai: Icon;
+        static readonly usdt: Icon;
+        static readonly usdc: Icon;
+        static readonly tusd: Icon;
+        static readonly husd: Icon;
+        static readonly pax: Icon;
+        static readonly usdk: Icon;
+        static readonly busd: Icon;
+        static readonly gusd: Icon;
+        static readonly usdx: Icon;
+        static readonly sai: Icon;
+        static readonly btc: Icon;
+        static readonly bch: Icon;
+        static readonly bsv: Icon;
+        static readonly eos: Icon;
+        static readonly tron: Icon;
+        static readonly zec: Icon;
+        static readonly xmr: Icon;
+        static readonly ltc: Icon
     }
 }
