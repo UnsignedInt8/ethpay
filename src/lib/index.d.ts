@@ -1,3 +1,6 @@
+import { CSSProperties } from "react";
+import React from "react";
+
 declare module "ethpay" {
 
     interface Props {
@@ -15,4 +18,6 @@ declare module "ethpay" {
     export class PayButton extends React.Component<Props, {}>{
 
     }
+
+    export default PayButton;
 }

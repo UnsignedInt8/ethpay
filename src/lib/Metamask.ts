@@ -40,7 +40,7 @@ export default class Metamask {
     static async sendTransaction(params: { to: string, from: string, gas?: string, gasPrice?: string, value?: string, data?: string }) {
         return new Promise<string>(resolve => {
             try {
-                window['ethereum']?.send({ method: 'eth_sendTransaction', params: [params], from: params.from }, (err, result) => {
+                window['ethereum']?.send({ method: 'eth_sendTransaction', params: [params], from: params.from }, (err: any, result: any) => {
                     if (err) {
                         resolve('');
                         return;

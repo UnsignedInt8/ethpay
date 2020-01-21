@@ -14,7 +14,6 @@ export default class Payment {
         let amount = coder.encode(['uint256'], [value]);
         let erc20 = new ethers.utils.Interface(ERC20Abi);
         let abi = erc20.functions.transfer.encode([to, amount]);
-        console.log(abi);
         return abi;
     }
 }

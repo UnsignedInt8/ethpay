@@ -1,5 +1,5 @@
 import React from 'react';
-import { PayButton } from '../lib';
+import PayButton from '../lib';
 
 const App = () => (
   <div className='app'>
