@@ -76,3 +76,23 @@
     }
   }
 }
+
+.__ethpay_button:disabled {
+  cursor: not-allowed;
+  color: #aaa !important;
+  border-color: #aaa !important;
+  opacity: 1 !important;
+  svg {
+    filter: grayscale(100%);
+
+    circle,
+    polygon,
+    path {
+      filter: grayscale(100%);
+    }
+
+    .__ethpay_symbol {
+      filter: grayscale(100%);
+    }
+  }
+}

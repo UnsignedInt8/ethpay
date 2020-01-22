@@ -80,7 +80,8 @@ const PayButton = (props: Props) => {
         <button className={`${props.className ?? ''} __ethpay_button ${props.mode ?? ''}`}
             style={{ borderColor: currency.color, ...props.style, color: currency.color }}
             title={title}
-            onClick={_ => eth.includes(props.currency) ? send() : jumpToPay()}>
+            onClick={_ => eth.includes(props.currency) ? send() : jumpToPay()}
+            disabled={!Metamask.hasWeb3()}>
             {props.caption ? <span className='caption'>{props.caption}</span> : undefined}
             {props.showValue && props.value ? <span className='value'>{props.value}</span> : undefined}
             <div className='icon'><currency.svg /></div>

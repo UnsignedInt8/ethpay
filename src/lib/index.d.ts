@@ -50,4 +50,18 @@ declare module "ethpay" {
         static readonly xmr: Icon;
         static readonly ltc: Icon
     }
+
+    export class Metamask {
+        static hasWeb3(): boolean;
+        static hasMetamask(): boolean;
+        static enable(): Promise<string[]>;
+        static requestAccounts(): Promise<string[]>;
+
+        /**
+         * Send Tx
+         * @param params value: minimum unit: eg. wei
+         * @returns Tx hash string if sent, empty string if cancelled;
+         */
+        static sendTransaction(params: { to: string, from: string, gas?: string, gasPrice?: string, value?: string, data?: string }): Promise<string>;
+    }
 }

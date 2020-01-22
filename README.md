@@ -2,6 +2,8 @@ ETHPay
 ==========
 A button to the Web3
 
+[See here](https://ethpay.now.sh)
+
 ## Quick Start
 
 For React developers, just install it from NPM:
@@ -10,17 +12,31 @@ For React developers, just install it from NPM:
 npm i ethpay
 ```
 
-## Usage
+## React Usage
 
 ```javascript
 import ETHPay from 'ethpay';
+import 'ethpay/build/index.css';
 
 const App = () => (
-    <div>
-        <ETHPay to='0x0000000000...' value={1} currency='eth' />
-    </div>
-)
+  <div>
+      <ETHPay to='0x123456...' value={0.1} currency='eth' />
+  </div>
+);
 ```
+
+| Props | Desc | Type | Required |
+|---|---|---|---|---|
+| currency | Which currency do you want to the user pays | String: 'eth' | Yes |
+| to | Address | String | Yes |
+| value | The amount of currency | Number | Yes |
+| caption | Button caption | String | No |
+| title | HTML Title | String | No |
+| mode | Dark mode or light mode | 'black'/'light' | No |
+| style | CSS Style | CSSProperties | No |
+| data | The data append to Tx | String, starts with '0x' | No |
+| showValue | Show value on button | boolean | No |
+| onTxSent | Called when Tx sent or user rejects | (hash: string) => void | No |
 
 ## LISENCE
 
