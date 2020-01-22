@@ -16,6 +16,7 @@ interface Props {
     value: number | string; // 'ether'
     data?: string;
     showValue?: boolean;
+    onTxSent?: (hash: string) => void;
 }
 
 const erc20Tokens = ['usdc', 'dai', 'usdt', 'tusd', 'husd', 'pax', 'busd', 'gusd', 'usdk', 'usdx', 'sai'];
@@ -35,50 +36,51 @@ const Contracts = {
     'husd': { addr: '0xdf574c24545e5ffecb9a659c229253d4111d87e1', decimals: 8 },
 };
 
-
-async function send(params: { to?: string, value?: number | string, data?: string, currency: string }) {
-
-    if (!Metamask.hasWeb3()) {
-        return '';
-    }
-
-    let [from] = await Metamask.enable();
-    if (!from) return '';
-
-    if (params.currency === 'eth') {
-        return await Metamask.sendTransaction({
-            to: params.to,
-            from,
-            gas: '0x5208',
-            value: ethers.utils.parseEther(`${params.value ?? 0}`).toHexString(),
-        });
-    } else {
-        const contract = Contracts[params.currency];
-        return await Metamask.sendTransaction({
-            to: contract.addr,
-            from,
-            gas: '0x186A0',
-            value: '0x00',
-            data: Payment.buildErc20Transfer(params.to, ethers.utils.parseUnits(`${params.value ?? 0}`, contract.decimals).toHexString()),
-        });
-    }
-}
-
-function jumpToPay(params: { to?: string, value?: number | string, currency: string }) {
-    window.open('', '_blank');
-}
-
 const PayButton = (props: Props) => {
     const currency = Icons[props.currency] as { color: string; img: any, svg: () => JSX.Element } || Icons['eth'];
     const title = props.title ?? `${props.caption ?? ''} ${props.currency?.toUpperCase() ?? 'ETH'} Pay`;
+
+    const send = async () => {
+
+        if (!Metamask.hasWeb3()) {
+            return;
+        }
+
+        let [from] = await Metamask.enable();
+        if (!from) return;
+
+        let hash: string;
+
+        if (props.currency === 'eth') {
+            hash = await Metamask.sendTransaction({
+                to: props.to,
+                from,
+                gas: '0x5208',
+                value: ethers.utils.parseEther(`${props.value ?? 0}`).toHexString(),
+            });
+        } else {
+            const contract = Contracts[props.currency];
+            hash = await Metamask.sendTransaction({
+                to: contract.addr,
+                from,
+                gas: '0x186A0',
+                value: '0x00',
+                data: Payment.buildErc20Transfer(props.to, ethers.utils.parseUnits(`${props.value ?? 0}`, contract.decimals).toHexString()),
+            });
+        }
+
+        props.onTxSent?.(hash);
+    }
+
+    const jumpToPay = () => {
+        window.open('', '_blank');
+    }
 
     return (
         <button className={`${props.className ?? ''} __ethpay_button ${props.mode ?? ''}`}
             style={{ borderColor: currency.color, ...props.style, color: currency.color }}
             title={title}
-            onClick={_ => eth.includes(props.currency) ?
-                send({ to: props.to, value: props.value, data: props.data, currency: props.currency }) :
-                jumpToPay({ to: props.to, value: props.value, currency: props.currency })}>
+            onClick={_ => eth.includes(props.currency) ? send() : jumpToPay()}>
             {props.caption ? <span className='caption'>{props.caption}</span> : undefined}
             {props.showValue && props.value ? <span className='value'>{props.value}</span> : undefined}
             <div className='icon'><currency.svg /></div>

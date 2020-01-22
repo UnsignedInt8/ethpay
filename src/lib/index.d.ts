@@ -14,6 +14,7 @@ declare module "ethpay" {
         value: number | string; // 'ether'
         data?: string;
         showValue?: boolean;
+        onTxSent?: (hash: string) => void;
     }
 
     export class PayButton extends React.Component<Props, {}>{

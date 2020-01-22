@@ -22,3 +22,6 @@ const App = () => (
 )
 ```
 
+## LISENCE
+
+MPL-2.0
