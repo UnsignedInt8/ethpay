@@ -3,6 +3,7 @@ import Icons from './Icons';
 import Metamask from '../Metamask';
 import Payment from '../Payment';
 import Contracts from '../Contracts';
+import ReactTooltip from 'react-tooltip'
 import * as ethers from 'ethers';
 import './PayButton.scss';
 
@@ -65,13 +66,17 @@ const PayButton = (props: Props) => {
 
     return (
         <button className={`${props.className ?? ''} __ethpay_button ${props.mode ?? ''}`}
+            data-tip={`${Metamask.hasWeb3() ? '' : 'Metamask not installed'}`}
             style={{ borderColor: currency.color, ...props.style, color: currency.color }}
             title={title}
+            data-delay-show={300}
             onClick={_ => eth.includes(props.currency) ? send() : jumpToPay()}>
             {props.caption ? <span className='caption'>{props.caption}</span> : undefined}
             {props.showValue && props.value ? <span className='value'>{props.value}</span> : undefined}
             <div className='icon'><currency.svg /></div>
             <span>Pay</span>
+
+            <ReactTooltip globalEventOff='click' effect="solid" />
         </button>
     );
 }
