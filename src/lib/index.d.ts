@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
 import React from "react";
+import * as ethers from 'ethers';
 
 declare module "ethpay" {
 
@@ -73,6 +74,13 @@ declare module "ethpay" {
          * @returns hex ABI string
          */
         static buildErc20Transfer(to: string, value: string): string;
+
+        /**
+         * Parse a value to the minimum unit
+         * @param value Ether/USDC/DAI
+         * @param unit Decimals: eg. 18/6/2
+         */
+        static parseUnits(value: string, unit: string | number): ethers.utils.BigNumber;
     }
 
     interface ContractInfo {

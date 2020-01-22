@@ -16,4 +16,8 @@ export default class Payment {
         let abi = erc20.functions.transfer.encode([to, amount]);
         return abi;
     }
+
+    static parseUnits(value: string, unit: string | number) {
+        return ethers.utils.parseUnits(value, unit);
+    }
 }
