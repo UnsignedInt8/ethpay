@@ -1,8 +1,6 @@
 ETHPay
 ==========
-A button to the Web3
-
-[See here](https://ethpay.now.sh)
+A Button to the Web3, Demo is [here](https://ethpay.now.sh/demo)
 
 ## Quick Start
 
@@ -37,6 +35,10 @@ const App = () => (
 | data | The data append to Tx | String, starts with '0x' | No |
 | showValue | Show value on button | boolean | No |
 | onTxSent | Called when Tx sent or user rejects | `(hash: string) => void` | No |
+
+## Typescript
+
+Typescript is supported.
 
 ## LISENCE
 
