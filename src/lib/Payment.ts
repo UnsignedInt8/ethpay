@@ -7,7 +7,7 @@ export default class Payment {
      * build ERC20 transfering ABI
      * @param to receiptor address
      * @param amount wei/min usd unit
-     * @param currency usdc/dai/sai/pax/usdt/gusd/tusd/usdx/busd/husd/usdk
+     * @returns hex ABI string
      */
     static buildErc20Transfer(to: string, value: string) {
         let coder = new ethers.utils.AbiCoder();

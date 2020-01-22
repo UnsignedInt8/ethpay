@@ -64,4 +64,34 @@ declare module "ethpay" {
          */
         static sendTransaction(params: { to: string, from: string, gas?: string, gasPrice?: string, value?: string, data?: string }): Promise<string>;
     }
+
+    export class Payment {
+        /**
+         * build ERC20 transfering ABI
+         * @param to receiptor address
+         * @param amount wei/min usd unit
+         * @returns hex ABI string
+         */
+        static buildErc20Transfer(to: string, value: string): string;
+    }
+
+    interface ContractInfo {
+        addr: string;
+        decimals: number;
+    }
+
+    export class Contracts {
+        usdc: ContractInfo;
+        dai: ContractInfo;
+        sai: ContractInfo;
+        pax: ContractInfo;
+        busd: ContractInfo;
+        gusd: ContractInfo;
+        usdk: ContractInfo;
+        usdx: ContractInfo;
+        tusd: ContractInfo;
+        usdt: ContractInfo;
+        husd: ContractInfo;
+    }
+
 }

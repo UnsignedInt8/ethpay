@@ -26,17 +26,17 @@ const App = () => (
 ```
 
 | Props | Desc | Type | Required |
-|---|---|---|---|---|
+|---|---|---|---|
 | currency | Which currency do you want to the user pays | String: 'eth' | Yes |
 | to | Address | String | Yes |
 | value | The amount of currency | Number | Yes |
 | caption | Button caption | String | No |
 | title | HTML Title | String | No |
-| mode | Dark mode or light mode | 'black'/'light' | No |
+| mode | Dark mode or light mode | `'black'/'light'` | No |
 | style | CSS Style | CSSProperties | No |
 | data | The data append to Tx | String, starts with '0x' | No |
 | showValue | Show value on button | boolean | No |
-| onTxSent | Called when Tx sent or user rejects | (hash: string) => void | No |
+| onTxSent | Called when Tx sent or user rejects | `(hash: string) => void` | No |
 
 ## LISENCE
 
