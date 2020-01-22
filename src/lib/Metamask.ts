@@ -1,10 +1,10 @@
 export default class Metamask {
     static hasWeb3() {
-        return typeof window['ethereum'] !== 'undefined';
+        return typeof window?.['ethereum'] !== 'undefined';
     }
 
     static hasMetamask() {
-        return window['ethereum']?.['isMetamask'] ?? false;
+        return window?.['ethereum']?.['isMetamask'] ?? false;
     }
 
     static async enable() {
@@ -17,7 +17,7 @@ export default class Metamask {
     static async requestAccounts() {
         try {
             // For old metamask
-            const accounts = await window['ethereum'].enable();
+            const accounts = await window?.['ethereum'].enable();
             return accounts as string[];
         } catch (error) { }
 
@@ -25,7 +25,7 @@ export default class Metamask {
             // You now have an array of accounts!
             // Currently only ever one:
             // ['0xFDEa65C8e26263F6d9A1B5de9555D2931A33b825']
-            const accounts = await window['ethereum'].send('eth_requestAccounts')
+            const accounts = await window?.['ethereum'].send('eth_requestAccounts')
             return accounts as string[];
         } catch (error) {
             return [];
@@ -40,7 +40,7 @@ export default class Metamask {
     static async sendTransaction(params: { to: string, from: string, gas?: string, gasPrice?: string, value?: string, data?: string }) {
         return new Promise<string>(resolve => {
             try {
-                window['ethereum']?.send({ method: 'eth_sendTransaction', params: [params], from: params.from }, (err: any, result: any) => {
+                window?.['ethereum']?.send({ method: 'eth_sendTransaction', params: [params], from: params.from }, (err: any, result: any) => {
                     if (err) {
                         resolve('');
                         return;
