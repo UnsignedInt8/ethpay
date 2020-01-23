@@ -82,7 +82,7 @@
   color: #aaa !important;
   border-color: #aaa !important;
   opacity: 1 !important;
-  
+
   svg {
     filter: grayscale(100%);
 
@@ -96,4 +96,8 @@
       filter: grayscale(100%);
     }
   }
+}
+
+.__ethpay_tooltip {
+  font-size: 10px;
 }

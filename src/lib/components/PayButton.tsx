@@ -65,7 +65,7 @@ const PayButton = (props: Props) => {
     }
 
     let [hasWeb3, setHasWeb3] = useState(false);
-    useEffect(() => { setHasWeb3(Metamask.hasWeb3()) });
+    useEffect(() => { setHasWeb3(Metamask.hasWeb3()) }, []);
 
     return (
         <button className={`${props.className ?? ''} __ethpay_button ${props.mode ?? ''}`}
@@ -79,7 +79,7 @@ const PayButton = (props: Props) => {
             <div className='icon'><currency.svg /></div>
             <span>Pay</span>
 
-            <ReactTooltip globalEventOff='click' effect="solid" />
+            <ReactTooltip globalEventOff='click' effect="solid" className='__ethpay_tooltip' />
         </button>
     );
 }
