@@ -1,6 +1,6 @@
 {
   "name": "ethpay",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {

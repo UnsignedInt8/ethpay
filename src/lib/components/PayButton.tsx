@@ -79,7 +79,7 @@ const PayButton = (props: Props) => {
             <div className='icon'><currency.svg /></div>
             <span>Pay</span>
 
-            <ReactTooltip globalEventOff='click' effect="solid" multiline={false} />
+            <ReactTooltip globalEventOff='click' effect="solid" className='__ethpay_tooltip' type='warning' multiline={false} />
         </button>
     );
 }
