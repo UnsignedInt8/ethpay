@@ -685,6 +685,7 @@ module.exports = function (webpackEnv) {
         react: 'react',
         'react-dom': 'react-dom',
         'ethers': 'ethers',
+        'react-tooltip': 'react-tooltip',
       }
       : {},
     // Some libraries import Node modules but don't use them in the browser.
