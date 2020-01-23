@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useEffect, useState } from 'react';
 import Icons from './Icons';
 import Metamask from '../Metamask';
 import Payment from '../Payment';
@@ -61,12 +61,15 @@ const PayButton = (props: Props) => {
     }
 
     const jumpToPay = () => {
-        window.open(`https://ethpay.now.sh/to/${props.to}?value=${props.value ?? 0}&currency=${props.currency ?? 'eth'}`, '_blank');
+        window?.open(`https://ethpay.now.sh/to/${props.to}?value=${props.value ?? 0}&currency=${props.currency ?? 'eth'}`, '_blank');
     }
+
+    let [hasWeb3, setHasWeb3] = useState(false);
+    useEffect(() => { setHasWeb3(Metamask.hasWeb3()) });
 
     return (
         <button className={`${props.className ?? ''} __ethpay_button ${props.mode ?? ''}`}
-            data-tip={`${Metamask.hasWeb3() ? '' : 'Metamask not installed'}`}
+            data-tip={`${hasWeb3 ? '' : 'Metamask not installed'}`}
             style={{ borderColor: currency.color, ...props.style, color: currency.color }}
             title={title}
             data-delay-show={300}
