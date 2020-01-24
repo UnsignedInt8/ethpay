@@ -69,7 +69,7 @@ const PayButton = (props: Props) => {
 
     return (
         <button className={`${props.className ?? ''} __ethpay_button ${props.mode ?? ''}`}
-            data-tip={`${hasWeb3 ? '' : 'Metamask not installed'}`}
+            data-tip={`${hasWeb3 ? '' : 'Metamask not found'}`}
             style={{ borderColor: currency.color, ...props.style, color: currency.color }}
             title={title}
             data-delay-show={300}
