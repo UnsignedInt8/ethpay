@@ -36,6 +36,8 @@ const App = () => (
 | showValue | Show value on button | boolean | No |
 | onTxSent | Called when Tx sent or user rejects | `(hash: string) => void` | No |
 
+[More examples](./src/demo/App.js)
+
 ## Typescript
 
 Typescript is supported.
