@@ -30,7 +30,7 @@ const App = () => (
 | value | The amount of currency | Number | Yes |
 | caption | Button caption | String | No |
 | title | HTML Title | String | No |
-| mode | Dark mode or light mode | `'black'/'light'` | No |
+| mode | Dark mode or light mode | `'dark'/'light'` | No |
 | style | CSS Style | CSSProperties | No |
 | data | The data append to Tx | String, starts with '0x' | No |
 | showValue | Show value on button | boolean | No |

@@ -36,10 +36,15 @@ const App = () => (
     <PayButton currency='bch' />
     <PayButton currency='bsv' />
     <PayButton currency='eos' />
+    <PayButton currency='eos' mode='dark' />
     <PayButton currency='tron' />
+    <PayButton currency='tron' mode='dark' />
     <PayButton currency='zec' caption='购买' />
     <PayButton currency='xmr' />
     <PayButton currency='ltc' />
+    <PayButton currency='ltc' mode='dark' />
+    <PayButton to='0xb20287507e81c67ed9ce672df35655776fede3bb' caption='Buy with' currency='eth' value='0.1' mode='dark' />
+
   </div>
 );
 

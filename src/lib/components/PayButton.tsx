@@ -12,7 +12,7 @@ interface Props {
     currency: 'btc' | 'eth' | 'bsv' | 'bch' | 'usdc' | 'dai' | 'usdt' | 'tusd' | 'husd' | 'pax' | 'busd' | 'gusd' | 'usdk' | 'usdx' | 'sai' | 'eos' | 'tron' | 'zec' | 'xmr' | 'ltc';
     caption?: string;
     title?: string;
-    mode?: 'black' | 'light';
+    mode?: 'dark' | 'light';
     style?: CSSProperties;
     to: string;
     value: number | string; // 'ether'
