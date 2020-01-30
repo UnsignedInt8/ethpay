@@ -1,6 +1,6 @@
 ETHPay
 ==========
-A Button to the Web3, Demo is [here](https://ethpay.now.sh/demo1)
+A Button to the Web3, [Demo](https://ethpay.now.sh/demo1)
 
 ## Quick Start
 
