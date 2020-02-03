@@ -31,6 +31,7 @@ const PayButton = (props: Props) => {
     const send = async () => {
 
         if (!Metamask.hasWeb3()) {
+            window?.open('https://metamask.io', '_blank');
             return;
         }
 
