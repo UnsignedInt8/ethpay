@@ -14,6 +14,7 @@ yarn add ethpay
 
 ```javascript
 import ETHPay from "ethpay";
+import "ethpay/index.css"
 
 const App = () => (
   <div>

@@ -1,6 +1,6 @@
 {
   "name": "ethpay",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A button to Web3",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
