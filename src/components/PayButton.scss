@@ -1,0 +1,103 @@
+.__ethpay_button {
+  height: 36px;
+  min-width: 108px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 24px;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  transition: all 0.5s;
+
+  .caption {
+    font-weight: 600;
+    font-size: 15px;
+    margin-right: 4px;
+  }
+
+  .value {
+    font-size: 16px;
+    margin-right: 2px;
+  }
+
+  $icon-height: 20px;
+  .icon {
+    height: $icon-height;
+    width: $icon-height;
+    display: inline-block;
+    margin: 0 3px;
+
+    svg {
+      height: $icon-height;
+
+      .__ethpay_symbol,
+      circle,
+      polygon,
+      path {
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+.__ethpay_button:hover {
+  opacity: 0.6;
+}
+
+.__ethpay_button:active,
+.__ethpay_button.dark {
+  color: white !important;
+  background: black;
+  border-color: black !important;
+
+  span {
+    color: white !important;
+  }
+
+  svg {
+    circle,
+    polygon,
+    path {
+      fill: white !important;
+    }
+
+    .__ethpay_symbol {
+      fill: black !important;
+    }
+  }
+}
+
+.__ethpay_button:disabled {
+  cursor: not-allowed;
+  color: #aaa !important;
+  border-color: #aaa !important;
+  opacity: 1 !important;
+
+  svg {
+    filter: grayscale(100%);
+
+    circle,
+    polygon,
+    path {
+      filter: grayscale(100%);
+    }
+
+    .__ethpay_symbol {
+      filter: grayscale(100%);
+    }
+  }
+}
+
+.__ethpay_tooltip {
+  font-size: 12px;
+}
